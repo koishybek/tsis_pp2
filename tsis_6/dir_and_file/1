@@ -1,0 +1,25 @@
+import os
+
+def list_directories(path):
+    try:
+        return [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
+    except FileNotFoundError:
+        return f"Error: The path '{path}' does not exist."
+
+def list_files(path):
+    try:
+        return [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    except FileNotFoundError:
+        return f"Error: The path '{path}' does not exist."
+
+def list_all(path):
+    try:
+        return os.listdir(path)
+    except FileNotFoundError:
+        return f"Error: The path '{path}' does not exist."
+
+if __name__ == "__main__":
+    path = input("Enter the path: ")
+    print("\nDirectories:", list_directories(path))
+    print("\nFiles:", list_files(path))
+    print("\nAll Directories and Files:", list_all(path))

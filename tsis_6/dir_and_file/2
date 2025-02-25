@@ -1,0 +1,13 @@
+import os
+
+def check_access(path):
+    return {
+        "Exists": os.path.exists(path),
+        "Readable": os.access(path, os.R_OK),
+        "Writable": os.access(path, os.W_OK),
+        "Executable": os.access(path, os.X_OK)
+    }
+
+if __name__ == "__main__":
+    path = input("Enter the path: ")
+    print("\nAccess Check:", check_access(path))

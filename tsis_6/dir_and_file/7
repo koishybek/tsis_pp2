@@ -1,0 +1,35 @@
+import os
+
+def write_list_to_file(path, data):
+    with open(path, 'w', encoding='utf-8') as file:
+        file.writelines("\n".join(data))
+
+def count_lines(path):
+    if os.path.exists(path) and os.path.isfile(path):
+        with open(path, 'r', encoding='utf-8') as file:
+            return sum(1 for _ in file)
+    return "Invalid file path"
+
+def generate_text_files():
+    for i in range(65, 91):
+        with open(f"{chr(i)}.txt", 'w', encoding='utf-8') as file:
+            file.write(f"This is {chr(i)}.txt")
+
+def copy_file(src, dest):
+    if os.path.exists(src) and os.path.isfile(src):
+        with open(src, 'r', encoding='utf-8') as s, open(dest, 'w', encoding='utf-8') as d:
+            d.write(s.read())
+    else:
+        return "Invalid source file"
+
+if __name__ == "__main__":
+    path = input("Enter the file path: ")
+    data = input("Enter list elements separated by commas: ").split(',')
+    write_list_to_file(path, data)
+    print("\nLine Count:", count_lines(path))
+    generate_text_files()
+    print("\n26 text files (A-Z) generated.")
+    src = input("Enter source file path: ")
+    dest = input("Enter destination file path: ")
+    copy_file(src, dest)
+    print("\nFile copied successfully.")

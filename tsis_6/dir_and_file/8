@@ -1,0 +1,28 @@
+import os
+
+def write_list_to_file(path, data):
+    with open(path, 'w') as f:
+        f.writelines("\n".join(data))
+
+def count_lines(path):
+    return sum(1 for _ in open(path)) if os.path.isfile(path) else "Invalid file"
+
+def generate_text_files():
+    for i in range(65, 91):
+        open(f"{chr(i)}.txt", 'w').write(f"This is {chr(i)}.txt")
+
+def copy_file(src, dest):
+    open(dest, 'w').write(open(src).read()) if os.path.isfile(src) else "Invalid file"
+
+def delete_file(path):
+    os.remove(path) if os.path.isfile(path) else "Invalid file"
+
+if __name__ == "__main__":
+    write_list_to_file(input("File path: "), input("List (comma separated): ").split(','))
+    print("Lines:", count_lines(input("File to count: ")))
+    generate_text_files()
+    print("Generated A-Z files")
+    copy_file(input("Source file: "), input("Destination file: "))
+    print("File copied")
+    delete_file(input("File to delete: "))
+    print("File deleted")

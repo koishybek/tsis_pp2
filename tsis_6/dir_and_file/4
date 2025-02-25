@@ -1,0 +1,11 @@
+import os
+
+def count_lines(path):
+    if os.path.exists(path) and os.path.isfile(path):
+        with open(path, 'r', encoding='utf-8') as file:
+            return sum(1 for _ in file)
+    return "Invalid file path"
+
+if __name__ == "__main__":
+    path = input("Enter the file path: ")
+    print("\nLine Count:", count_lines(path))
