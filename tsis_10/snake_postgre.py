@@ -3,7 +3,7 @@ import random
 import sys
 
 
-from db_handler import (
+from snake_db_handler import (
     create_tables,
     get_or_create_user,
     get_latest_user_score,
