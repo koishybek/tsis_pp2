@@ -32,7 +32,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Snake Game - PostgreSQL Edition")
 clock = pygame.time.Clock()
 
-font = pygame.font.SysFont(None, 30)
+font = pygame.font.SysFont("Arial", 30)
 
 
 WHITE = (255, 255, 255)
@@ -44,7 +44,7 @@ FOOD_COLOR = (255, 165, 0)
 
 level_configs = {
     1: (5, []),
-    2: (7, [(100,100, 400,20), (100, 100, 20, 400)]),
+    2: (7, [(100, 100, 400,20), (100, 100, 20, 400)]),
     3: (9, [(200,200, 200,20), (200, 300, 20, 200)])
 }
 DEFAULT_SPEED = 10
