@@ -1,4 +1,5 @@
 import psycopg2
+<<<<<<< HEAD
 
 conn = psycopg2.connect(
     dbname="lab11",
@@ -6,6 +7,16 @@ conn = psycopg2.connect(
     password="postgres",
     host="localhost",
     port="5432"
+=======
+import csv
+
+conn = psycopg2.connect(
+    dbname="postgres",
+    user="postgres",
+    password="TaikpanovRus12",
+    host="localhost",
+    port="1501"
+>>>>>>> 07a5ef07633ca98f9834d9751075313f564c133a
 )
 cur = conn.cursor()
 
@@ -97,7 +108,11 @@ if __name__ == '__main__':
 
     insert_user("Alice", "12345678901")
     insert_user("Bob", "98765432101")
+<<<<<<< HEAD
     insert_user("MR.OLZ", "87011015548")
+=======
+    insert_user("Ruslan", "87011014548")
+>>>>>>> 07a5ef07633ca98f9834d9751075313f564c133a
     insert_user("Aliya", "43647527645")
     insert_user("Marya", "83463270000")
 
