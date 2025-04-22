@@ -2,9 +2,9 @@ import psycopg2
 import csv
 
 conn = psycopg2.connect(
-    dbname="postgres",
+    dbname="lab11",
     user="postgres",
-    password="TaikpanovRus12",
+    password="postgres",
     host="localhost",
     port="1501"
 )
